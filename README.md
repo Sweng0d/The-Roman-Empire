@@ -1,7 +1,7 @@
 # The Roman Empire
 ![image](https://user-images.githubusercontent.com/101097089/160344573-329cff6c-59b0-4a86-b6b3-6915b44cfaf5.png)
 
-The idea of this project is to allow any ethereum address to create as many Roman citizens as desired, with all the benefits or disadvantages of each type of person at the time. As in ancient Rome, whoever is considered a Roman citizen (not all of them, hehe), can establish new ideas of laws, and, if whoever has the right to vote approves the law, the law takes effect. So this idea of creating laws and voting will be the main point of our smart contract
+The idea of this project is to allow any ethereum address to create as many Roman citizens as desired, with all the benefits or disadvantages of each type of person at the time. As in ancient Rome, whoever is considered a Roman citizen (not all of them, hehe), can establish new ideas of laws, and if the law is democratically approved within the stipulated time, the law can be passed. So this idea of creating laws and voting will be the main point of our smart contract.
 
 # Social Classes
 ![image](https://user-images.githubusercontent.com/101097089/160344630-ed15dd9a-4ed9-4aac-be8b-59ae90d7502c.png)
@@ -56,7 +56,7 @@ Public commands like populationSize have also been created which allow you to se
 
 # Democracy and Voting
 ![image](https://user-images.githubusercontent.com/101097089/160381080-37d8cd60-cb1e-43d7-8a50-554c2d2005c8.png)
-The idea in terms of voting was to simulate Roman democracy at its peak. Allowing anyone who was considered a Roman citizen to create some idea of ​​law, and other people, who had the rights, to vote on the laws.
+The idea in terms of voting was to simulate Roman democracy at its peak. Allowing anyone who was considered a Roman citizen to create some idea of law, and other people, who had the rights, to vote on the laws.
 
 However, we had to add several modifiers, and other functions to guarantee some concepts of democracy, such as:
 -You can only vote with a citizen who belongs to you.
