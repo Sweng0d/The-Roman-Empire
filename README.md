@@ -56,6 +56,7 @@ Public commands like populationSize have also been created which allow you to se
 
 # Democracy and Voting
 ![image](https://user-images.githubusercontent.com/101097089/160381080-37d8cd60-cb1e-43d7-8a50-554c2d2005c8.png)
+
 The idea in terms of voting was to simulate Roman democracy at its peak. Allowing anyone who was considered a Roman citizen to create some idea of law, and other people, who had the rights, to vote on the laws.
 
 However, we had to add several modifiers, and other functions to guarantee some concepts of democracy, such as:
