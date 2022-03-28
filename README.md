@@ -8,7 +8,7 @@ The idea of this project is to allow any ethereum address to create as many Roma
 
 As we all know, ancient rome was divided into classes.
 Therefore, the first part of our contract will be the creation of a Roman citizen, where he will have a name, age, social class and rights (which slaves and freedpeople obviously didn't have). 
-Each ethereum address can create as many citizens as desired. And only you can control your citizen, voting or establishing new laws. It is worth mentioning that if you want to create a Slave or a freedpeople, you cannot vote or establish any law.
+Each ethereum address can create as many citizens as desired. And only you can control your citizen, voting or establishing new laws. It is worth mentioning that if you want to create a slave or a freedpeople, you cannot vote or establish any law.
 
 ```
 // SPDX-License-Identifier: UNLICENSED
