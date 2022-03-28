@@ -59,11 +59,10 @@ Public commands like populationSize have also been created which allow you to se
 The idea in terms of voting was to simulate Roman democracy at its peak. Allowing anyone who was considered a Roman citizen to create some idea of law, and other people, who had the rights, to vote on the laws.
 
 However, we had to add several modifiers, and other functions to guarantee some concepts of democracy, such as:
-- You can only vote with a citizen who belongs to you.
-- Any citizen with rights can create a law and its proposal.
-- There is a time to vote, if the time expires, the democratic result can be called, and after that, the law is approved.
+- You can only vote with a citizen who belongs to you
+- Any citizen with rights can create or vote on a law and its proposal
+- There is a time to vote, if the time expires, the democratic result can be called, and after that, the law is approved
 - A citizen can only vote once per law
-- You can only vote with a citizen who belongs to you.
 
 ```
 contract RomanLaws is TheRomanCitizen {
