@@ -131,5 +131,75 @@ contract RomanLaws is TheRomanCitizen {
 ```
 
 # New Features
-##Bribe
+
+#Bribe
+
+How about bribery? 
+We know that in a democracy, many people buy someone else's vote. So the idea here was to make it so that the owner of a citizen can put a price on his vote, and thus, someone can buy his vote for a certain law.
+To do this, first we had to add a price to create a citizen, a feature that didn't exist before, otherwise it wouldn't make sense to buy someone's vote if you can just create a new citizen.
+A new part of Struct was also created, called priceToBribe. And a function to allow the owner of the citizen to change its price.
+
+```
+
+    struct Citizen {
+        string name;
+        uint256 age;
+        Classes class; 
+        bool haveRights;
+        address payable creator;
+        uint priceToBribe;
+    }
+    
+    uint public priceToCreateCitizen = 0.1 ether;
+    
+    function createCitizen(string memory _name, uint _age, Classes _class, uint priceToBribe) public payable {
+        require (msg.value >= priceToCreateCitizen);
+        bool _haveRights;
+        if (_class == Classes.Slaves || _class == Classes.Freedpeople){
+            _haveRights = false;
+        } else {
+            _haveRights = true;
+        }
+        
+        citizens.push(Citizen(_name, _age, _class, _haveRights, payable(msg.sender) , priceToBribe));
+        populationSize++;
+
+    }
+    
+    function newPriceToBribe(uint _newPriceToBribe, uint whoIs) external isTheCreator(whoIs) {
+        citizens[whoIs].priceToBribe = _newPriceToBribe;
+    }
+    
+    ```
+    
+    After that, comes the bribe itself.
+    In the bribe, you put some entries, like:
+    - Which citizen do you want to bribe
+    - Which law will you vote for?
+    - Your vote
+    And in the message.value you put the price of the bribery.
+    
+    The easiest way to do this, as there is a modifier that doesn't allow you to vote if you don't own the citizen is first to store who was the former owner in a variable "x", then change the owner of the citizen to whom he is bribing, perform the desired vote of the bribe, and then return the citizen to the initial owner, as we can see in the code below.
+    
+    ```
+    function bribeTheVote(uint ofWho, uint whichLaw, bool approveTheLaw) external payable {
+        require(msg.sender != citizens[ofWho].creator);
+        require(msg.value >= citizens[ofWho].priceToBribe);
+        address payable x = citizens[ofWho].creator;
+        citizens[ofWho].creator = payable(msg.sender);
+        vote(whichLaw, ofWho, approveTheLaw);
+        citizens[ofWho].creator = payable(x);
+    }
+    
+    ```
+    
+    
+
+
+
+
+
+
+
+
 
