@@ -132,7 +132,10 @@ contract RomanLaws is TheRomanCitizen {
 
 # New Features
 
-#Bribe
+# Bribe
+
+![image](https://user-images.githubusercontent.com/101097089/160547703-a8c01a11-9072-4482-aea7-bbbfd19deb7c.png)
+
 
 How about bribery? 
 We know that in a democracy, many people buy someone else's vote. So the idea here was to make it so that the owner of a citizen can put a price on his vote, and thus, someone can buy his vote for a certain law.
