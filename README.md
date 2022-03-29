@@ -172,7 +172,6 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }   
 ```  
-The Bribe function
 After that, comes the bribe itself.
 In the bribe, you put some entries, like:
 - Which citizen do you want to bribe
