@@ -183,7 +183,7 @@ A new part of Struct was also created, called priceToBribe. And a function to al
     
     The easiest way to do this, as there is a modifier that doesn't allow you to vote if you don't own the citizen is first to store who was the former owner in a variable "x", then change the owner of the citizen to whom he is bribing, perform the desired vote of the bribe, and then return the citizen to the initial owner, as we can see in the code below.
     
-    ```
+```
     function bribeTheVote(uint ofWho, uint whichLaw, bool approveTheLaw) external payable {
         require(msg.sender != citizens[ofWho].creator);
         require(msg.value >= citizens[ofWho].priceToBribe);
