@@ -142,7 +142,7 @@ We know that in a democracy, many people buy someone else's vote. So the idea he
 To do this, first we had to add a price to create a citizen, a feature that didn't exist before, otherwise it wouldn't make sense to buy someone's vote if you can just create a new citizen.
 A new part of Struct was also created, called priceToBribe. And a function to allow the owner of the citizen to change its price.
 
-```
+    ```
     struct Citizen {
         string name;
         uint256 age;
@@ -172,7 +172,7 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }
     
-```
+    ```
     
     After that, comes the bribe itself.
     In the bribe, you put some entries, like:
