@@ -130,3 +130,6 @@ contract RomanLaws is TheRomanCitizen {
 }
 ```
 
+# New Features
+##Bribe
+
