@@ -143,7 +143,6 @@ To do this, first we had to add a price to create a citizen, a feature that didn
 A new part of Struct was also created, called priceToBribe. And a function to allow the owner of the citizen to change its price.
 
 ```
-
     struct Citizen {
         string name;
         uint256 age;
@@ -173,7 +172,7 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }
     
-    ```
+```
     
     After that, comes the bribe itself.
     In the bribe, you put some entries, like:
