@@ -174,9 +174,9 @@ A new part of Struct was also created, called priceToBribe. And a function to al
 ```  
 After that, comes the bribe itself.
 In the bribe, you put some inputs, like:
-- Which citizen do you want to bribe
+- Which citizen do you want to bribe?
 - Which law will you vote for?
-- Your vote
+- Your vote (approve the law or not).
 And in the message.value you put the price of the bribery.
     
 The easiest way to do this, as there is a modifier that doesn't allow you to vote if you don't own the citizen is first to store who was the former owner in a variable "x", then change the owner of the citizen to whom he is bribing, perform the desired vote of the bribe, and then return the citizen to the initial owner, as we can see in the code below.    
