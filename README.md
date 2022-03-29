@@ -172,7 +172,7 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }
     
-    ```
+```
     
     After that, comes the bribe itself.
     In the bribe, you put some entries, like:
