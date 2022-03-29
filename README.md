@@ -189,15 +189,4 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         vote(whichLaw, ofWho, approveTheLaw);
         citizens[ofWho].creator = payable(x);
     }
-    
-    
-    
-
-
-
-
-
-
-
-
-
+```
