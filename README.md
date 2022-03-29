@@ -173,7 +173,7 @@ A new part of Struct was also created, called priceToBribe. And a function to al
     }   
 ```  
 After that, comes the bribe itself.
-In the bribe, you put some entries, like:
+In the bribe, you put some inputs, like:
 - Which citizen do you want to bribe
 - Which law will you vote for?
 - Your vote
