@@ -171,7 +171,8 @@ A new part of Struct was also created, called priceToBribe. And a function to al
     function newPriceToBribe(uint _newPriceToBribe, uint whoIs) external isTheCreator(whoIs) {
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }   
-```  After that, comes the bribe itself.
+```  
+    After that, comes the bribe itself.
     In the bribe, you put some entries, like:
     - Which citizen do you want to bribe
     - Which law will you vote for?
@@ -189,7 +190,6 @@ A new part of Struct was also created, called priceToBribe. And a function to al
         citizens[ofWho].creator = payable(x);
     }
     
-```
     
     
 
