@@ -16,14 +16,18 @@ contract TheRomanCitizen {
         uint256 age;
         Classes class; 
         bool haveRights;
-        address creator;
+        address payable creator;
+        uint priceToBribe;
     }
+
+    uint public priceToCreateCitizen = 0.1 ether;
 
     Citizen[] public citizens;
 
     uint public populationSize;
 
-    function createCitizen(string memory _name, uint _age, Classes _class) public {
+    function createCitizen(string memory _name, uint _age, Classes _class, uint priceToBribe) public payable {
+        require (msg.value >= priceToCreateCitizen);
         bool _haveRights;
         if (_class == Classes.Slaves || _class == Classes.Freedpeople){
             _haveRights = false;
@@ -31,7 +35,7 @@ contract TheRomanCitizen {
             _haveRights = true;
         }
         
-        citizens.push(Citizen(_name, _age, _class, _haveRights, msg.sender));
+        citizens.push(Citizen(_name, _age, _class, _haveRights, payable(msg.sender) , priceToBribe));
         populationSize++;
 
     }
@@ -42,7 +46,7 @@ contract RomanLaws is TheRomanCitizen {
 
     mapping(uint => mapping(uint => bool)) alreadyVoted;
 
-    uint timeToVote = 2 days;
+    uint timeToVote = 2 minutes;
 
     struct LawsProposed{
         string nameOfTheLaw;
@@ -100,5 +104,19 @@ contract RomanLaws is TheRomanCitizen {
             approvedOrNot = "The law was not approved!";
         }
     }
+
+    function newPriceToBribe(uint _newPriceToBribe, uint whoIs) external isTheCreator(whoIs) {
+        citizens[whoIs].priceToBribe = _newPriceToBribe;
+    }
+
+    function bribeTheVote(uint ofWho, uint whichLaw, bool approveTheLaw) external payable {
+        require(msg.sender != citizens[ofWho].creator);
+        require(msg.value >= citizens[ofWho].priceToBribe);
+        address payable x = citizens[ofWho].creator;
+        citizens[ofWho].creator = payable(msg.sender);
+        vote(whichLaw, ofWho, approveTheLaw);
+        citizens[ofWho].creator = payable(x);
+    }
+
 }
 
