@@ -132,7 +132,7 @@ contract RomanLaws is TheRomanCitizen {
 
 # New Features
 
-# Bribe
+## Bribe
 
 ![image](https://user-images.githubusercontent.com/101097089/160547703-a8c01a11-9072-4482-aea7-bbbfd19deb7c.png)
 
@@ -171,17 +171,14 @@ A new part of Struct was also created, called priceToBribe. And a function to al
     function newPriceToBribe(uint _newPriceToBribe, uint whoIs) external isTheCreator(whoIs) {
         citizens[whoIs].priceToBribe = _newPriceToBribe;
     }   
-```
-    
-    After that, comes the bribe itself.
+```  After that, comes the bribe itself.
     In the bribe, you put some entries, like:
     - Which citizen do you want to bribe
     - Which law will you vote for?
     - Your vote
     And in the message.value you put the price of the bribery.
     
-    The easiest way to do this, as there is a modifier that doesn't allow you to vote if you don't own the citizen is first to store who was the former owner in a variable "x", then change the owner of the citizen to whom he is bribing, perform the desired vote of the bribe, and then return the citizen to the initial owner, as we can see in the code below.
-    
+    The easiest way to do this, as there is a modifier that doesn't allow you to vote if you don't own the citizen is first to store who was the former owner in a variable "x", then change the owner of the citizen to whom he is bribing, perform the desired vote of the bribe, and then return the citizen to the initial owner, as we can see in the code below.    
 ```
     function bribeTheVote(uint ofWho, uint whichLaw, bool approveTheLaw) external payable {
         require(msg.sender != citizens[ofWho].creator);
